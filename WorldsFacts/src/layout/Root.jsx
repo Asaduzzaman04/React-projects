@@ -5,8 +5,8 @@ import { useScroll, motion, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
 const Root = () => {
+  //custom cusror
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
   useEffect(() => {
     const handleCursorPosition = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -15,11 +15,12 @@ const Root = () => {
     return () => window.removeEventListener("mousemove", handleCursorPosition);
   }, []);
 
+  //scroll progress bar
   const { scrollYProgress } = useScroll();
 
   const scale = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 20,
+    stiffness: 50,
+    damping: 30,
     restDelta: 0.001,
   });
 
@@ -28,7 +29,7 @@ const Root = () => {
       <main className="relative">
         {/* custom-cursor */}
         <motion.div
-          className="fixed top-0 left-0 pointer-events-none -z-50 w-8 h-8 rounded-full border-2 shadow-[0px_0px_10px_#dfdfdf] border-blue-100 bg-transparent"
+          className="fixed top-0 left-0 pointer-events-none z-50 w-8 h-8 rounded-full border-2 shadow-[0px_0px_10px_#dfdfdf] border-blue-100 bg-transparent"
           style={{
             x: cursorPosition.x,
             y: cursorPosition.y,
@@ -38,10 +39,10 @@ const Root = () => {
           animate={{
             x: cursorPosition.x,
             y: cursorPosition.y,
-            // filter: "blur(8px)",
+            filter: "blur(1px)",
           }}
-          transition={{ type: "tween", stiffness: 50, damping: 10 }}
-          whileTap={{scale:2}}
+          transition={{ type: "tween", stiffness: 50, damping: 30 }}
+          whileTap={{ scale: 2 }}
         />
         {/* scroll-progress */}
         <motion.div

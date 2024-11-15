@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { navbarData } from "../../public/Json/navbarData"; // Fixed path format
-import { motion, AnimatePresence } from "framer-motion";
+import { motion,  } from "framer-motion";
 import tickSound from "../assets/sounds/ui-click-43196.mp3";
 import { RiMenuFold3Line } from "react-icons/ri";
 import { useState } from "react";
@@ -80,7 +80,7 @@ const Navbar = () => {
         <div
           className={`${
             isClick ? "flex" : "hidden"
-          } flex-col absolute justify-center items-center top-[54px] left-0 w-full h-screen bg-white text-black md:hidden gap-11 text-xl font-bold `}
+          } flex-col absolute z-50 justify-center items-center top-[54px] left-0 w-full h-screen bg-white text-black md:hidden gap-11 text-xl font-bold `}
         >
           {navbarData?.map((data, index) => (
             <motion.button
