@@ -1,11 +1,16 @@
-
+import { ContextData } from "../context/ContextData";
+import CountryData from "./../components/ui/CountryComponents/CountryData";
 
 const Country = () => {
-    return (
-        <div>
-            
-        </div>
-    );
+  return (
+    <>
+      <ContextData>
+        <section>
+          <CountryData />
+        </section>
+      </ContextData>
+    </>
+  );
 };
 
 export default Country;

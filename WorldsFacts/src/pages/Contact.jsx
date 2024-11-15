@@ -1,9 +1,11 @@
 
 const Contact = () => {
     return (
-        <div>
-            
-        </div>
+        <>
+            <section>
+                
+            </section>
+        </>
     );
 };
 

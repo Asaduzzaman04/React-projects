@@ -4,6 +4,7 @@ import Footer from "./../components/Footer";
 import { useScroll, motion, useSpring } from "framer-motion";
 import { useEffect, useState } from "react";
 
+
 const Root = () => {
   //custom cusror
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -26,6 +27,8 @@ const Root = () => {
 
   return (
     <>
+
+
       <main className="relative">
         {/* custom-cursor */}
         <motion.div
@@ -43,12 +46,12 @@ const Root = () => {
           }}
           transition={{ type: "tween", stiffness: 50, damping: 30 }}
           whileTap={{ scale: 2 }}
-        />
+          />
         {/* scroll-progress */}
         <motion.div
           style={{ scale }}
           className="rounded-r-xl shadow-[2px_0px_2px_#2e86de] fixed top-0 left-0 right-0 h-1 bg-blue-200 origin-left z-50 "
-        />
+          />
 
         {/*navbar */}
         <Navbar />
@@ -56,6 +59,7 @@ const Root = () => {
         {/*footer */}
         <Footer />
       </main>
+   
     </>
   );
 };

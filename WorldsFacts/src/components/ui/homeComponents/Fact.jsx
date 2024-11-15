@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import {FactsData} from "../../../../public/Json/FactsData"
 import FectCard from "./FectCard";
-console.log(FactsData);
+
 const Fact = () => {
   const facts = "Check Out These Captivating Facts  We're Excited About".split(
     ""
   );
   return (
-    <div className="py-5 border  flex flex-col gap-10 md:gap-16 lg:gap-24 justify-center items-center ">
+    <div className="py-5 flex flex-col gap-10 md:gap-16 lg:gap-24 justify-center items-center ">
       {/* intresting fect text */}
       <div>
         <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold  ">

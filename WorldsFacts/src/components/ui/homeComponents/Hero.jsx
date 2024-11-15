@@ -2,7 +2,9 @@ import Button from "./../../Button";
 import heroImage from "../../../assets/heroImage/—Pngtree—earth globe_2001929.png";
 import { motion } from "framer-motion";
 
+
 const Hero = () => {
+  
   return (
     <div className="relative w-full md:mt-9 lg:mt-0 flex flex-col-reverse md:flex-row justify-around items-center md:gap-10 overflow-hidden">
       {/* hero-text */}
