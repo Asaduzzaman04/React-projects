@@ -10,7 +10,7 @@ const Home = () => {
           <Hero />
         </section>
         {/* fact-section */}
-        <section className="border">
+        <section className="">
           <Fact />
         </section>
       </main>
