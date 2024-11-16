@@ -4,7 +4,7 @@ import { axiosCountry } from "../services/Api";
 
 export const ContextData = ({ children }) => {
 
-  //*fetching the country data
+  //? fetching the country data
   const handleCountryData = async () => {
     try {
       const response = await axiosCountry();

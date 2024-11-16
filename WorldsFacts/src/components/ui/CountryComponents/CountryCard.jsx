@@ -1,9 +1,13 @@
 
 
-const CountryCard = () => {
+const CountryCard = ({value}) => {
+
+
     return (
         <div>
-            
+            {
+                value.name.common
+            }
         </div>
     );
 };
