@@ -5,6 +5,7 @@ import About from "./../pages/About";
 import Country from "./../pages/Country";
 import Contact from "./../pages/Contact";
 import Errorpage from './../components/Errorpage';
+import CountryDetails from "../components/ui/CountryComponents/CountryDetails";
 
 const routes = createBrowserRouter(
   [
@@ -24,6 +25,10 @@ const routes = createBrowserRouter(
         {
           path: "/country",
           element: <Country />,
+        },
+        {
+          path: "/country:countryname",
+          element: <CountryDetails/>
         },
         {
           path: "/contact",

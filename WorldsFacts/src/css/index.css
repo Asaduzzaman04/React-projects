@@ -5,7 +5,15 @@
 body{
     background-color: #000000;
     color: azure;
+    scroll-behavior: smooth;
 }
 ::selection{
     background-color: #211b31;
 }
+/* Apply custom scrollbar to the entire document */
+::-webkit-scrollbar {
+    width: 0px; /* Width of the scrollbar */
+    height: 0px; /* Height of the scrollbar (for horizontal scrollbar) */
+  }
+  
+ 

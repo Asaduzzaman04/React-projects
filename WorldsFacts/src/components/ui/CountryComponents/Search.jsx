@@ -12,7 +12,7 @@ const hanleSubmit = (e) => {
 
   return (
     <>
-      <div className="border flex flex-col-reverse md:flex-row gap-10 justify-around py-3 items-center">
+      <div className=" flex flex-col-reverse md:flex-row gap-10 justify-around py-3 items-center">
         {/* form-section */}
         <form onSubmit={hanleSubmit}>
           {/* search-input */}
