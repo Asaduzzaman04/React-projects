@@ -8,3 +8,7 @@ export const countryApi = axios.create({
 export const axiosCountry =  () => {
   return   countryApi.get("/all");
 };
+
+export const countryDetails = (name) =>{
+  return countryApi.get(`name/${name}`);
+}

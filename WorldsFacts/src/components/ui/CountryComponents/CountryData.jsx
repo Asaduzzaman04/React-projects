@@ -19,9 +19,6 @@ const CountryData = () => {
   //view more country functions
   const viewMore = viewMoreCountry ? searchCountry.slice(0, 20) : searchCountry;
 
-
-      
-
   return (
     <section>
       {/* search-section */}

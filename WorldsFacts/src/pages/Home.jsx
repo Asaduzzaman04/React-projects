@@ -6,7 +6,7 @@ const Home = () => {
     <>
       <main className="px-5 md:px-[2%] lg:px-[4%] py-4 md:py-[1%] ">
         {/* hero-section */}
-        <section>
+        <section className="mt-12">
           <Hero />
         </section>
         {/* fact-section */}

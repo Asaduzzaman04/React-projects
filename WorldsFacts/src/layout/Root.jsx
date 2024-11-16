@@ -32,12 +32,12 @@ const Root = () => {
       <main className="relative">
         {/* custom-cursor */}
         <motion.div
-          className="fixed top-0 left-0 pointer-events-none z-50 w-8 h-8 rounded-full border-2 shadow-[0px_0px_10px_#dfdfdf] border-blue-100 bg-transparent"
+          className="fixed top-0 left-0 pointer-events-none z-[1000] w-8 h-8 rounded-full border-2 shadow-[0px_0px_10px_#dfdfdf] border-blue-100 bg-transparent"
           style={{
             x: cursorPosition.x,
             y: cursorPosition.y,
             translateX: "-50%",
-            translateY: "-50%",
+            // translateY: "-50%",
           }}
           animate={{
             x: cursorPosition.x,
@@ -54,7 +54,9 @@ const Root = () => {
           />
 
         {/*navbar */}
-        <Navbar />
+       <section className="fixed z-[100] w-full bg-black ">
+       <Navbar />
+       </section>
         <Outlet />
         {/*footer */}
         <Footer />

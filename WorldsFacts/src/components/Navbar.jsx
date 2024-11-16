@@ -23,7 +23,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="relative flex justify-between items-center  px-5 md:px-14 lg:px-[5%] py-3 md:py-5">
+    <header className=" relative  flex justify-between items-center  px-5 md:px-14 lg:px-[5%] py-3 md:py-5">
       {/* Logo */}
       <div className="flex gap-[1px]  font-semibold text-2xl ">
         <motion.img
@@ -80,7 +80,7 @@ const Navbar = () => {
         <div
           className={`${
             isClick ? "flex" : "hidden"
-          } flex-col absolute z-50 justify-center items-center top-[54px] left-0 w-full h-screen bg-white text-black md:hidden gap-11 text-xl font-bold `}
+          } flex-col fixed z-50 justify-center items-center top-[54px] left-0 w-full h-screen bg-white text-black md:hidden gap-11 text-xl font-bold `}
         >
           {navbarData?.map((data, index) => (
             <motion.button

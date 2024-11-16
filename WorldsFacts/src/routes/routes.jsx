@@ -27,7 +27,7 @@ const routes = createBrowserRouter(
           element: <Country />,
         },
         {
-          path: "/country:countryname",
+          path: "/country/:countryname", //wrone syntex (/country:countryname) == write syntex /country/:countryname
           element: <CountryDetails/>
         },
         {
