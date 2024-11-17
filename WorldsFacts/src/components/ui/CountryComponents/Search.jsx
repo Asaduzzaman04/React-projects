@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import Button from "./../../Button";
 import SubcontinentsSelect from './SubcontinentsSelect';
 
-const Search = ({setSearchValue,searcValue,searchFilter,setSearchFilter}) => {
+const Search = ({setSearchValue,searcValue,searchFilter,setSearchFilter,setIsaccending}) => {
 
 //prevent form default behaviour
 const hanleSubmit = (e) => {
@@ -44,10 +45,10 @@ const hanleSubmit = (e) => {
         </form>
         {/* acc and dec button */}
       
-          <button>
+          <button onClick={() => setIsaccending("acc")}>
             <Button text="acc" />
           </button>
-          <button>
+          <button onClick={() => setIsaccending("dec")}>
             <Button text="dec" />
           </button>
         

@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useParams } from "react-router-dom";
 import { countryDetails } from "../../../services/Api";
+import Loader from './../../Loader';
 
 const CountryDetails = () => {
   // Get the country name from the route parameters
@@ -26,8 +27,25 @@ const CountryDetails = () => {
 
 //!code start from here
 
-  if (isPending) return <div>Loading...</div>;
-  return <div>i am country detilas {countryname}</div>;
+  if (isPending) return <Loader/>
+  return (
+    <>
+    <section className="border-t-2">
+      <div className="mt-20 border-t-2">
+      <h1 className="text-3xl capitalize  font-semibold">{data.name}</h1>
+      <div className="flex flex-col justify-center items-start gap-4">
+        <p>
+          <span className="capitalize text-xl">capital</span> : {data.capital}
+        </p>
+        <p>
+          <span className="capitalize text-xl">population</span> : {data.population}
+        </p>
+        {/* Add more details as needed */}
+      </div>
+      </div>
+    </section>
+    </>
+  )
 };
 
 export default CountryDetails;

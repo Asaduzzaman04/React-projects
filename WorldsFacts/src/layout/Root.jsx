@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 import Navbar from "./../components/Navbar";
 import Footer from "./../components/Footer";
 import { useScroll, motion, useSpring } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 const Root = () => {
@@ -24,6 +24,8 @@ const Root = () => {
     damping: 30,
     restDelta: 0.001,
   });
+  const height = useRef()
+
 
   return (
     <>
@@ -50,11 +52,10 @@ const Root = () => {
         {/* scroll-progress */}
         <motion.div
           style={{ scale }}
-          className="rounded-r-xl shadow-[2px_0px_2px_#2e86de] fixed top-0 left-0 right-0 h-1 bg-blue-200 origin-left z-50 "
+          className="rounded-r-xl z-[10000] shadow-[2px_0px_2px_#2e86de] fixed top-0 left-0 right-0 h-1 bg-blue-200 origin-left  "
           />
-
         {/*navbar */}
-       <section className="fixed z-[100] w-full bg-black ">
+       <section ref={height} className="fixed z-[100] w-full bg-transparent backdrop-blur-3xl shadow-[0px_6px_20px_#000] ">
        <Navbar />
        </section>
         <Outlet />
