@@ -48,7 +48,7 @@ const CountryData = () => {
 
   if(isPending) return <Loader/>
 
-
+if(isError) return <p> error  : {error.massage}</p>
 
 
 

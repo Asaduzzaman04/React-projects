@@ -8,8 +8,6 @@ const About = () => {
             <div className=" mt-20 h-lvh flex  justify-center items-center w-full">
 
 
-
-
             </div>
         </section>
     );
