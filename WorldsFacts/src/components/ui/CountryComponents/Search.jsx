@@ -1,7 +1,7 @@
 import Button from "./../../Button";
 import SubcontinentsSelect from './SubcontinentsSelect';
 
-const Search = ({setSearchValue,searcValue}) => {
+const Search = ({setSearchValue,searcValue,searchFilter,setSearchFilter}) => {
 
 //prevent form default behaviour
 const hanleSubmit = (e) => {
@@ -55,7 +55,7 @@ const hanleSubmit = (e) => {
 
         {/* search-subcontinents-option */}
         <div>
-            <SubcontinentsSelect/>
+            <SubcontinentsSelect searchFilter={searchFilter} setSearchFilter={setSearchFilter} />
         </div>
       </div>
     </>

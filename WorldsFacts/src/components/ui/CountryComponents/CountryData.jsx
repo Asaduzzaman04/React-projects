@@ -5,32 +5,50 @@ import Search from "./Search";
 import Button from "./../../Button";
 
 const CountryData = () => {
-  const [searcValue, setSearchValue] = useState(""); // Initialize as an empty string
-  const [viewMoreCountry, setViewMoreCountry] = useState(true); // Initialize as an empty array
+  const [searchValue, setSearchValue] = useState("");
+  const [viewMoreCountry, setViewMoreCountry] = useState(true);
+  const [searchFilter, setSearchFilter] = useState("all");
   const data = useCountryData();
 
   // Only filter if data.data is an array
   const searchCountry = Array.isArray(data?.data)
-    ? data.data.filter((item) =>
-        item.name.common.toLowerCase().includes(searcValue.toLowerCase())
-      )
+    ? data.data.filter((country) => {
+        // Filter by region if searchFilter is not "all"
+        const matchesRegion =
+          searchFilter === "all" ||
+          country.region.toLowerCase() === searchFilter.toLowerCase();
+
+        // Check if the country name includes the search value
+        const matchesSearch = country.name.common
+          .toLowerCase()
+          .includes(searchValue.toLowerCase());
+
+        // Return true if both conditions are met
+      
+        return matchesRegion && matchesSearch;
+      })
     : [];
 
-  //view more country functions
+  // View more country functionality
   const viewMore = viewMoreCountry ? searchCountry.slice(0, 20) : searchCountry;
 
   return (
     <section>
-      {/* search-section */}
+      {/* Search section */}
       <div>
-        <Search setSearchValue={setSearchValue} searcValue={searcValue} />
+        <Search
+          setSearchValue={setSearchValue}
+          searchValue={searchValue}
+          searchFilter={searchFilter}
+          setSearchFilter={setSearchFilter}
+        />
       </div>
 
-      {/* country-cards */}
+      {/* Country cards */}
       <div className="mt-10 flex flex-col justify-center items-center">
-        <ul className="grid  gap-5 md:gap-7 lg:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4 justify-center items-center">
-          {viewMore.map((items, idx) => (
-            <CountryCard value={items} idx={idx} key={idx} />
+        <ul className="grid gap-5 md:gap-7 lg:gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 justify-center items-center">
+          {viewMore.map((item, idx) => (
+            <CountryCard value={item} idx={idx} key={idx} />
           ))}
         </ul>
         <button

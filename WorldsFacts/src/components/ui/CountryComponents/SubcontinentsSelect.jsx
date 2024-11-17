@@ -1,17 +1,40 @@
-const SubcontinentsSelect = () => {
+import { motion } from "framer-motion";
+
+const SubcontinentsSelect = ({ searchFilter, setSearchFilter }) => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
+  const option = [
+    { value: "all" },
+    { value: "africa" },
+    { value: "americas" },
+    { value: "asia" },
+    { value: "europe" },
+    { value: "oceania" },
+  ];
+
   return (
     <>
-      <form className="max-w-sm mx-auto">
-        <select
-          id="countries"
-          className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      <form className="w-full h-full mx-auto" onSubmit={handleSubmit}>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <option selected>Choose a country</option>
-          <option value="US">United States</option>
-          <option value="CA">Canada</option>
-          <option value="FR">France</option>
-          <option value="DE">Germany</option>
-        </select>
+          <select
+            value={searchFilter}
+            onChange={(e) => setSearchFilter(e.target.value)}
+            className="bg-zinc-800  text-xl px-5 py-1.5 rounded-lg outline-none capitalize font-semibold"
+          >
+            {option &&
+              option.map((item, idx) => (
+                <option key={idx} value={item.value}>
+                  {item.value}
+                </option>
+              ))}
+          </select>
+        </motion.div>
       </form>
     </>
   );
