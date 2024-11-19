@@ -2,24 +2,20 @@ export const navbarData = [
   {
     title: "Home",
     path: "/",
-    
-  },
-  {
-    title: "About",
-    path: "/about",
-  
   },
 
   {
     title: "Countries",
     path: "/country",
-    
   },
 
   {
     title: "Contact",
     path: "/contact",
-   
+  },
+  {
+    title: "About",
+    path: "/about",
   },
 ];
 export default navbarData;
