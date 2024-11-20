@@ -1,5 +1,10 @@
+import { Suspense } from "react";
+import React from "react";
 import { ContextData } from "../context/ContextData";
-import CountryData from "./../components/ui/CountryComponents/CountryData";
+import Loader from "../components/Loader";
+const CountryData = React.lazy(() =>
+  import("./../components/ui/CountryComponents/CountryData")
+);
 
 const Country = () => {
   return (
@@ -7,7 +12,9 @@ const Country = () => {
       <section className="px-5  md:px-[2%] lg:px-[4%] py-4 md:py-[1%] ">
         <ContextData>
           <section className="mt-20  lg:mt-16">
-            <CountryData />
+            <Suspense fallback={<Loader />}>
+              <CountryData />
+            </Suspense>
           </section>
         </ContextData>
       </section>

@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { countryDetails } from "../../../services/Api";
 import Loader from "./../../Loader";
 
+
 const CountryDetails = () => {
   //navigation
   const navigate = useNavigate();

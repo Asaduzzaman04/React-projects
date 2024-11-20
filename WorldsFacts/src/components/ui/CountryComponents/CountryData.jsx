@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import useCountryData from "../../../hooks/useCountryData";
 import CountryCard from "./CountryCard";
 import Search from "./Search";
@@ -6,7 +6,7 @@ import Button from "./../../Button";
 import Loader from './../../Loader';
 
 
-const CountryData = () => {
+const CountryData = memo(() => {
   const [searchValue, setSearchValue] = useState("");
   const [viewMoreCountry, setViewMoreCountry] = useState(true);
   const [searchFilter, setSearchFilter] = useState("all");
@@ -81,6 +81,6 @@ if(isError) return <p> error  : {error.massage}</p>
       </div>
     </section>
   );
-};
+});
 
 export default CountryData;

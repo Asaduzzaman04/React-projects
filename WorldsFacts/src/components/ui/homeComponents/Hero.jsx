@@ -2,7 +2,6 @@ import Button from "./../../Button";
 import heroImage from "../../../assets/heroImage/—Pngtree—earth globe_2001929.png";
 import { motion } from "framer-motion";
 
-
 const Hero = () => {
   
   return (
